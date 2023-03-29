@@ -1,16 +1,16 @@
 <script>
 export default {
-  name: 'App'
+  name: 'Header'
 }
 
 </script>
 
 <template>
-<h1>Template Classe 89</h1>
+<h1>Boolflix Search from TMDB</h1>
 </template>
 
 <style lang="scss" scoped>
 h1 {
-    color:red;
+    color:black;
 }
 </style>
