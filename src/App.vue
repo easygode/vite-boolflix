@@ -21,7 +21,7 @@ export default {
   },
   methods: {
     search (){
-      axios.get('https://api.themoviedb.org/3/search/tv?api_key=e99307154c6dfb0b4750f6603256716d', {
+      axios.get('https://api.themoviedb.org/3/search/movie?api_key=908af261f8e52211132e82f969d145a4', {
         params: {
           title: store.searchTitle,
         }
