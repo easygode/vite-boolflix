@@ -3,8 +3,8 @@
 Project Boolflix - A Netflix replica using Vite
 
 To install project
-npm install
-npm run dev
+- npm install
+- npm run dev
 
 -----------------------------------------------------
 
