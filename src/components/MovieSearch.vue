@@ -25,7 +25,7 @@ export default {
             <input type="text" class="form-control" id="search-movie" placeholder="Search Movie" v-model="store.searchTitle">
         </div>
         <div class="mb-3 col-12 col-sm-auto">
-            <button @submit.prevent="$event => $emit('search')" type="submit" class="btn btn-primary me-1">Search</button>
+            <button @click.prevent="$event => $emit('searching')" type="submit" class="btn btn-primary me-1">Search</button>
             <button type="reset" class="btn btn-secondary" @click.prevent="reset">Reset</button>
         </div>
     </div>

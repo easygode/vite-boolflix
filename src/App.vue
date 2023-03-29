@@ -27,9 +27,10 @@ export default {
         }
       })
       .then((response) => {
-          console.log(response);
           this.store.movies = response.data.results;
+          this.store.searchTitle = '',
           this.store.moviesFound = response.data.results.length;
+          console.log('sto cercando');
       })
       .catch((error) => {
         this.store.movies = [];
@@ -46,8 +47,8 @@ export default {
 
 <template>
   <AppHeader />
-  <AppMain @user_search="search" />
-  <MovieSearch />
+  <AppMain />
+  <MovieSearch @searching="search" />
   <AppFooter />
 </template>
 
