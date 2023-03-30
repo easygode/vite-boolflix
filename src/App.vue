@@ -5,6 +5,7 @@ import AppHeader from './components/AppHeader.vue';
 import AppMain from './components/AppMain.vue';
 import MovieSearch from './components/MovieSearch.vue';
 import AppFooter from './components/AppFooter.vue';
+import CardApp from './components/CardApp.vue';
 
 export default {
   name:'App',
@@ -13,6 +14,7 @@ export default {
     AppMain,
     MovieSearch,
     AppFooter,
+    CardApp
   },
   data(){
     return {
@@ -29,6 +31,7 @@ export default {
         }
       })
       .then((response) => {
+        console.log(response);
           this.store.movies = response.data.results;
           this.store.searchKey = '',
           this.store.moviesFound = response.data.results.length;
@@ -50,8 +53,9 @@ export default {
 <template>
   <AppHeader />
   <AppMain />
-  <MovieSearch @searching="search" />
+  <MovieSearch @search="search" />
   <AppFooter />
+  <CardApp />
 </template>
 
 

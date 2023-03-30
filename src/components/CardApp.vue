@@ -38,13 +38,11 @@ export default {
     <div v-for="n in 5">{{ n }}</div>
     <font-awesome></font-awesome>
     <font-awesome></font-awesome>
-
-    
 </article>
 </template>
 
 <style lang="scss" scoped>
-h1 {
-    color:red;
+h3 {
+    color: green;
 }
 </style>
