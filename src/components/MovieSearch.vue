@@ -10,7 +10,7 @@ export default {
     methods: {
         reset() {
             console.log('svuoto i campi');
-            this.store.searchMovie = '';
+            this.store.searchKey = '';
             this.store.searchStatus = '';
             this.$emit('search');
         }

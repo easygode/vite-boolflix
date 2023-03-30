@@ -21,16 +21,18 @@ export default {
   },
   methods: {
     search (){
-      axios.get('https://api.themoviedb.org/3/search/movie?api_key=908af261f8e52211132e82f969d145a4', {
+      axios.get(this.store.config.urlMovie, {
         params: {
-          title: store.searchTitle,
+          api_key: this.store.config.apiKey,
+          language: this.store.config.defaultLang,
+          query: this.store.searchKey
         }
       })
       .then((response) => {
           this.store.movies = response.data.results;
-          this.store.searchTitle = '',
+          this.store.searchKey = '',
           this.store.moviesFound = response.data.results.length;
-          console.log('sto cercando');
+          console.log(store.searchKey);
       })
       .catch((error) => {
         this.store.movies = [];
