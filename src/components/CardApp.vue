@@ -2,11 +2,13 @@
 import CountryFlag from 'vue-country-flag-next'
 export default {
   name: 'Card',
+  
   components: {
-    CountryFlag
+    CountryFlag,
   },
   props: {
-    info: Object
+    info: Object,
+    title: String
   },
   computed: {
     getLanguage(){
@@ -21,6 +23,12 @@ export default {
     },
     getVote(){
         return Math.ceil(this.info.vote_average / 2);
+    },
+    title(){
+      return this.info.title || this.info.name;
+    },
+    original_title(){
+      return this.info.original_title || this.info.original_name;
     }
   }
 }
@@ -30,8 +38,8 @@ export default {
 <template>
 <h1>Boolflix Classe 89</h1>
 <article>
-    <h3>{{ info.title }}</h3>
-    <h4>{{ info.original_title }}</h4>
+    <h3>{{ title}}</h3>
+    <h4>{{ original_title }}</h4>
     <div>{{  getLanguage }}</div>
     <country-flag :country="getLanguange" size="small" />
     <div>{{ getVote }}</div>
@@ -40,7 +48,7 @@ export default {
     <font-awesome></font-awesome>
 </article>
 </template>
-
+ 
 <style lang="scss" scoped>
 h3 {
     color: green;

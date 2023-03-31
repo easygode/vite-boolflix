@@ -23,7 +23,8 @@ export default {
   },
   methods: {
     search (){
-      axios.get(this.store.config.urlMovie, {
+      //movie
+      axios.get(this.store.config.urlApi + this.store.config.endpointMovie  , {
         params: {
           api_key: this.store.config.apiKey,
           language: this.store.config.defaultLang,
@@ -40,11 +41,31 @@ export default {
       .catch((error) => {
         this.store.movies = [];
         this.store.moviesFound = 0;
-      })
+      });
+      //tv shows
+      //axios.get(this.store.config.urlApi + this.store.config.endpointTvShows , {
+        //params: {
+          //api_key: this.store.config.apiKey,
+          //language: this.store.config.defaultLang,
+          //query: this.store.searchKey
+        //}
+      //})
+      //.then((response) => {
+        //console.log(response);
+          //this.store.movies = response.data.results;
+          //this.store.searchKey = '',
+          //this.store.moviesFound = response.data.results.length;
+          //console.log(store.searchKey);
+      //})
     }
     },
     created(){
         this.search();
+    },
+    computed: {
+      results(){
+        return [...this.store.movies, ...this.store.tv]
+      }
     }
   }
 
