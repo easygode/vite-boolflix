@@ -8,37 +8,35 @@ export default {
   },
   props: {
     info: Object,
-    title: String
   },
-  computed: {
-    getLanguage(){
-        switch(this.info.original_language) {
-        case 'en':
-            return 'gb';
-        case 'he':
-            return 'il';
-        default:
-            return this.info.original_language;
-        }
-    },
-    getVote(){
-        return Math.ceil(this.info.vote_average / 2);
-    },
-    title(){
-      return this.info.title || this.info.name;
-    },
-    original_title(){
-      return this.info.original_title || this.info.original_name;
-    }
+  //computed: {
+    //getLanguage(){
+        //switch(this.info.original_language) {
+        //case 'en':
+            //return 'gb';
+        //case 'he':
+            //return 'il';
+        //default:
+            //return this.info.original_language;
+        //}
+    //},
+    //getVote(){
+        //return Math.ceil(this.info.vote_average / 2);
+    //},
+    //title(){
+      //return this.info.title;
+    //},
+    //original_title(){
+      //return this.info.original_title || this.info.original_name;
+    //}
   }
-}
 
 </script>
 
 <template>
 <h1>Boolflix Classe 89</h1>
 <article>
-    <h3>{{ title}}</h3>
+    <h3>{{ title }}</h3>
     <h4>{{ original_title }}</h4>
     <div>{{  getLanguage }}</div>
     <country-flag :country="getLanguange" size="small" />

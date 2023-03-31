@@ -9,5 +9,6 @@ export const store = reactive({
         defaultLang: 'it-IT'
     },
     movies:[],
+    tvShows: [],
     searchKey:''
 });
