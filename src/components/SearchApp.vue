@@ -1,4 +1,5 @@
 <script>
+import axios from 'axios';
 import { store } from '../store';
 export default {
     name: 'Search',
@@ -9,15 +10,23 @@ export default {
     },
     methods: {
         search (){
-            console.log('cerco...')
-            console.log(this.store.searchKey)
+            //console.log('cerco...');  verifica input dati per query
+            //console.log(this.store.searchKey);
 
+            axios.get(this.store.config.urlMovie,{
+                params: {
+                    api_key :this.store.config.keyApi,
+                    language: this.store.config.defaultLang,
+                    query: this.store.searchKey,
+                }
+            }).then((response) => {
+                //console.log(response) verifica risposta api con dato input
+            })
         },
         reset() {
             console.log('svuoto i campi');
             this.store.searchKey = '';
             this.store.searchStatus = '';
-            this.$emit('search');
         }
         }
     }
