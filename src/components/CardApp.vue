@@ -1,5 +1,4 @@
 <script>
-import CountryFlag from 'vue-country-flag-next'
 export default {
   name: 'Card',
   props: {

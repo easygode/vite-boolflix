@@ -1,17 +1,18 @@
 <script>
 import axios from 'axios';
 import { store } from '../store';
-import CardApp from './CardApp.vue'
+import CountryFlag from 'vue-country-flag-next'
+import { initCustomFormatter } from 'vue';
 
 export default {
     name: 'Search',
     data() {
         return {
-            store
+            store,
         }
     },
     components: {
-        CardApp
+        CountryFlag
     },
     methods: {
         search (){
@@ -30,9 +31,25 @@ export default {
                 console.log(response.data.results)
             })
         },
+        //switch per lingue non specificate nel pacchetto country-flag-next
+        // non funziona come voluto: per queste lingue viene visualiyyato il codice paese senza bandierina
+        /*computed: {    
+            "movie.original_language" (){
+                switch(movie.original_language){
+                    case 'en':
+                        return 'gb';
+                    case 'he':
+                        return 'il';
+
+                    default:
+                        return movie.original_language;
+                }
+            }
+        }, */
         reset() {
             console.log('svuoto i campi');
             this.store.searchKey = '';
+            this.store.movies = '';
         }
         }
     }
@@ -53,8 +70,9 @@ export default {
             <br>
             <h3>Title: {{ movie.title }}</h3>
             <h4>Original Title: {{ movie.original_title }}</h4>
-            <h4>Original Language: {{ movie.original_language }}</h4>
+            <h4>Original Language: {{ movie.original_language.toUpperCase() }}  <country-flag :country="movie.original_language" size="normal" /></h4>
             <h5>Rating: {{ movie.vote_average }}</h5>
+            
             <br>
         </article>
     </main>
