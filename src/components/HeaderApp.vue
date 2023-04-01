@@ -7,6 +7,7 @@ export default {
 
 <template>
 <h1>Boolflix</h1>
+<br>
 </template>
 
 <style lang="scss" scoped>
