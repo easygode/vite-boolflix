@@ -29,7 +29,6 @@ export default {
                 console.log(response) //verifica risposta api con dato input
                 this.store.movies = response.data.results;
                 console.log(response.data.results)
-                poster = store.pathImg + movie.poster_path
             })
 
             axios.get(this.store.config.urlTv,{
@@ -65,6 +64,9 @@ export default {
             this.store.searchKey = '';
             this.store.movies = '';
             this.store.tvs = '';
+        },
+        getVote(){
+            return Math.ceil(movie.vote_average / 2)
         }
         }
     }
@@ -88,7 +90,9 @@ export default {
             <h3>Movie Title: {{ movie.title }}</h3>
             <h4>Original Title: {{ movie.original_title }}</h4>
             <h4>Original Language: {{ movie.original_language.toUpperCase() }}  <country-flag :country="movie.original_language" size="normal" /></h4>
-            <h5>Rating: {{ movie.vote_average }}</h5>
+            <h5>Rating: {{ Math.ceil(movie.vote_average / 2) }}</h5>
+            <font-awesome-icon icon="fa-solid fa-star" v-for="n in Math.ceil(movie.vote_average / 2)"/>
+            <font-awesome-icon icon="fa-regular fa-star" v-for="n in 5-Math.ceil(movie.vote_average / 2)"/>
             <br>
         </article>
         <article v-for="tv in store.tvs">
@@ -98,8 +102,9 @@ export default {
             <h3>TV Series Title: {{ tv.name }}</h3>
             <h4>Original Title: {{ tv.original_name }}</h4>
             <h4>Original Language: {{ tv.original_language.toUpperCase() }}  <country-flag :country="tv.original_language" size="normal" /></h4>
-            <h5>Rating: {{ tv.vote_average }}</h5>
-            <br>
+            <h5>Rating: {{ Math.ceil(tv.vote_average / 2) }}</h5>
+            <font-awesome-icon icon="fa-solid fa-star" v-for="n in Math.ceil(tv.vote_average / 2)"/>
+            <font-awesome-icon icon="fa-regular fa-star" v-for="n in 5-Math.ceil(tv.vote_average / 2)"/>
         </article>
     </main>
 </template>

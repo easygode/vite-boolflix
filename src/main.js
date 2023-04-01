@@ -16,4 +16,5 @@ library.add(faStar, faStarFull, faSearch)
 
 import App from './App.vue'
 
-createApp(App).mount('#app')
+createApp(App).component('font-awesome-icon', FontAwesomeIcon)
+.mount('#app')
