@@ -29,6 +29,7 @@ export default {
                 console.log(response) //verifica risposta api con dato input
                 this.store.movies = response.data.results;
                 console.log(response.data.results)
+                poster = store.pathImg + movie.poster_path
             })
 
             axios.get(this.store.config.urlTv,{
@@ -82,6 +83,8 @@ export default {
         <h2>Search results:</h2>
         <article v-for="movie in store.movies">
             <br>
+            <img v-if="movie.poster_path === null" src="https://picsum.photos/342/400" :alt="null">
+            <img :src="store.pathImg + movie.poster_path" alt="movie_poster">
             <h3>Movie Title: {{ movie.title }}</h3>
             <h4>Original Title: {{ movie.original_title }}</h4>
             <h4>Original Language: {{ movie.original_language.toUpperCase() }}  <country-flag :country="movie.original_language" size="normal" /></h4>
@@ -90,6 +93,8 @@ export default {
         </article>
         <article v-for="tv in store.tvs">
             <br>
+            <img v-if="tv.poster_path === null" src="https://picsum.photos/342/400" :alt="null">
+            <img :src="store.pathImg + tv.poster_path" alt="tv_poster">
             <h3>TV Series Title: {{ tv.name }}</h3>
             <h4>Original Title: {{ tv.original_name }}</h4>
             <h4>Original Language: {{ tv.original_language.toUpperCase() }}  <country-flag :country="tv.original_language" size="normal" /></h4>
