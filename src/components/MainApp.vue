@@ -7,7 +7,7 @@ export default {
 </script>
 
 <template>
-<h2>Search Film</h2>
+<h2>Search Film & TV Series</h2>
 <br>
 
 </template>

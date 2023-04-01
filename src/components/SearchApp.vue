@@ -63,6 +63,7 @@ export default {
             console.log('svuoto i campi');
             this.store.searchKey = '';
             this.store.movies = '';
+            this.store.tvs = '';
         }
         }
     }
