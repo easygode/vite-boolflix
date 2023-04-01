@@ -9,7 +9,7 @@ export default {
     },
     methods: {
         search (){
-            console.log('cerco...cerco...cerco')
+            console.log('cerco...')
             console.log(this.store.searchKey)
 
         },
@@ -25,28 +25,10 @@ export default {
 
 <template>
     <header>
-    <div class="container">
-        <div class="mb-3 col-12 col-sm-auto">
-            <label for="search-character" class="form-label d-none">Search Movie</label>
-            <input type="text" class="form-control" id="search-movie" placeholder="Search Movie" v-model="store.searchKey">
-        </div>
-        <div class="mb-3 col-12 col-sm-auto">
-            <button @click="$emit(search)" type="submit" class="btn btn-primary me-1">Search</button>
-            <button type="reset" class="btn btn-secondary" @click.prevent="reset">Reset</button>
-        </div>
-    </div>
+        <input type="text" placeholder="Search Film" v-model="store.searchKey">
+        <button @click="search">Search</button>
+        <button @click="reset" type="reset">New Search</button>
     </header>
-    <main>
-        <article>
-            <h2>Movies and TV Shows</h2>
-            <ul>
-                <li v-for="result in results"></li>
-                <CardApp :info="result" />
-            </ul>
-        </article>
-    </main>
-
-    
 </template>
 
 <style lang="scss" scoped></style>

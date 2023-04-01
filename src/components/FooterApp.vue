@@ -10,7 +10,5 @@ export default {
 </template>
 
 <style lang="scss" scoped>
-h3 {
-    color:blue;
-}
+
 </style>

@@ -9,12 +9,10 @@ export default {
 </script>
 
 <template>
-<h1>Boolflix Classe 89</h1>
+<h1>Search Film</h1>
 
 </template>
 
 <style lang="scss" scoped>
-h1 {
-    color:red;
-}
+
 </style>

@@ -6,7 +6,7 @@ export default {
 </script>
 
 <template>
-<h1>Boolflix Search from TMDB</h1>
+<h1>Boolflix</h1>
 </template>
 
 <style lang="scss" scoped>
