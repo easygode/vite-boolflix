@@ -7,11 +7,13 @@ export default {
 </script>
 
 <template>
-<h2>Search Film & TV Series</h2>
-<br>
+<h2>Search Movies & TV Series</h2>
 
 </template>
 
 <style lang="scss" scoped>
-
+h2 {
+    text-align: center;
+    padding: 1rem;
+}
 </style>

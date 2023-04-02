@@ -6,12 +6,16 @@ export default {
 </script>
 
 <template>
-<h1>Boolflix</h1>
+<h1><img src="../assets/img/boolflix.png" alt="Boolflix"></h1>
 <br>
 </template>
 
 <style lang="scss" scoped>
 h1 {
-    color:black;
+  text-align: center;
+  img {
+    width: 20rem;
+  }
 }
+
 </style>

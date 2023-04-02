@@ -6,7 +6,7 @@ export default {
 </script>
 
 <template>
-<h3>-------End of Search-------</h3>
+  
 </template>
 
 <style lang="scss" scoped>
