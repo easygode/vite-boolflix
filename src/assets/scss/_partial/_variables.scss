@@ -1,3 +1,22 @@
-$primary: #333;
-$secondary: #222;
+/*colors*/
 
+$pink: #d87093;
+$black: #222222;
+$white: #ffffff;
+$bluray: #0095d5;
+$bludark: #1776dc;
+$star: #eff30af5;
+
+/*general*/
+
+ul,li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+a, button {
+    cursor: pointer;
+}

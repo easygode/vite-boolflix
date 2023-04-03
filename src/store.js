@@ -9,4 +9,6 @@ export const store = reactive({
     },
     searchKey:'',
     pathImg: 'https://image.tmdb.org/t/p/w342',
+    movies: '',
+    tvs: '',
 });
